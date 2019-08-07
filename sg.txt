@@ -1,6 +1,47 @@
-giaduishadnqwuihdouizncjsbafbbasbuicbiasfd
-jknsd kasdhcasd
-noiscnas
-date is the best
-hi hi hi
-ghgfhfghfhgfhyjvdss
+
+print("1:to add next order 2: View status of allocated")
+list=[0,0,0,0]
+cuscount=0
+history=[]
+
+while True:
+
+    a=int(input())
+
+    if(a==1):
+        cuscount += 1
+        o1=int(input("enter time of order: "))
+        t1=int(input("enter time taken to delliever order: "))
+        d1=list[0]+list[1]
+        #print(d1)
+        d2=list[2]+list[3]
+        #print(d2)
+
+        if(o1>=d1 or d1==0):
+            list[0]=o1;
+            list[1]=t1;
+            print('d1 allocated to ',cuscount)
+            #print(list)
+            history.append(cuscount)
+            history.append("d1")
+
+        elif(o1>=d2 or d2==0):
+            list[2]=o1;
+            list[3]=t1;
+            print('d2 allocated to ',cuscount)
+            history.append("d2")
+
+        else:
+            print("delieverty not available")
+            history.append(cuscount)
+            history.append("No Food")
+
+    elif(a==2):
+        for i in range(0,len(history),2):
+            print("customer",history[i],"--",history[i+1])
+            print("\n")
+            
+    elif(a==3):
+        break
+        
+        
